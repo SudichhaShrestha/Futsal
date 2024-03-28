@@ -33,48 +33,35 @@
             <label for="search-bar" class="fa fa-search"></label>
         </form>
     </header>
-
+    <!--End of header-->
+    <!-- Start of body -->
     <div class="container">
-        <h2>Profile Page</h2>
-        <div class="grid-container">
-            <form action="#">
-                <div class="Profile-info">
-                    <img src="/assets/images/img.jpg" alt="Profile Picture" class="profile-picture">
-                    <div class="form-container">
-                        <div class="form">
-                            <label for="first-name">First Name</label>
-                            <input type="text" id="first-name" name="first-name">
-                        </div><br>
-                        <div class="form">
-                            <label for="last-name">Last Name</label>
-                            <input type="text" id="last-name" name="last-name">
-                        </div><br>
-                        <div class="form">
-                            <label for="username">Username</label>
-                            <input type="text" id="username" name="username">
-                        </div><br>
-                    </div>
+        <form action="#">
+            <div class="Profile_info">
+                <h2>Profile Page</h2>
+                <div class="form-container">
+                        <img src="/assets/images/img.jpg" alt="Profile Picture" class="profile-picture">
+                    <div class="personal_info">
+                        <label for="first-name">First Name</label>
+                    </div><br>
+                    <div class="personal_info">
+                        <label for="last-name">Last Name </label>
+                    </div><br>
+                    <div class="personal_info">
+                        <label for="username">Username</label>
+                    </div><br>
+                    <div class="personal_info">
+                        <label for="number">Phone</label>
+                    </div><br>
+                    <div class="personal_info"> 
+                        <label for="email">Email </label>
+                    </div><br>
+                    <a href="update.html"><button class="btnedit">Edit</button></a>
+                    <a href="#"><button class="btnedit">Logout</button></a>
                 </div>
-
-                <div class="form">
-                    <label for="location">Location</label>
-                    <input type="text" id="location" name="location">
-                </div><br>
-                <div class="form">
-                    <label for="number">Phone</label>
-                    <input type="number" id="number" name="number" pattern="[0-9]{10}">
-                </div><br>
-                <div class="form">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div><br>
-
-                <a href="/update.html"><button class="btn"> Edit</button></a>
-                <button class="btn"> Logout</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-
     <script src="/assets/js/homepage.js"></script>
 </body>
 

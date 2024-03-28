@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="/assets/css/futsal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Single Futsal</title>
-    
 </head>
 <body>
   <header class="site-header">
@@ -37,9 +36,8 @@
         <div class="grid-container">
             <div class="column">
                 <h1>Shankhamul Futsal</h1>
-                <img src="/assets/images/img.jpg" width="300px" class="img">
+                <img src="/assets/images/img.jpg" width="300px" class="mainimg">
                 <div class="gallery">
-                    <h3>Gallery</h3>
                     <div class="image">
                         <img src="/assets/images/img.jpg" alt="Image1" onclick="openModal('/assets/images/img.jpg')">
                         <img src="/assets/images/img.jpg" alt="Image2" onclick="openModal('/assets/images/img.jpg')">
@@ -50,22 +48,29 @@
                     <span class="close" onclick="closeModal()">&times;</span>
                     <img class="modal-content" id="modal-image">
                 </div>
+                <div class="booked">
+                  <select class="time">
+                    <option value="time_slot1">Booked Time</option>
+                    <option value="6am-7am">Time A</option>
+                    <option value="7am-8am">Time B</option>
+                </select>
+                </div>
                 <div class="btn"><a href="">Book Now</a></div>
             </div>
 
             <div class="dcolumn">
-              <h1>Discription</h1>
               <div class="contentd">
-                <p>Welcome to Shankhamul FutsalThe futsal started since 2015 February 15.
-                   One of the most popular futsal in the city.
-                You can book games and be our member.
-                <br> Location: Shankhamul, Kathmandu <br>Parking: Available <br>Price: Rs1000/hour <br>Time: 6am-10pm</p>
+                <p>Welcome to Shankhamul Futsal <br> <br> The futsal started since 2015 February 15.
+                   One of the most popular futsal in the city. You can book games and be our member.<br>
+                <br> Location: Shankhamul, Kathmandu <br>
+                <br>Parking: Available <br>
+                <br>Price: Rs1000/hour<br> 
+                <br>Time: 6am-10pm</p>
               </div>
             </div>
         </div>
     </div>
   </div>
-
   <script src="./assets/js/futsal.js"></script>
 </body>
 </html>
