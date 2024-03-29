@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/admin.css">
+    <!--emoji link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            <li class="active">
+                <a href="Admin.html">
+                    <i class="fas fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <i class="fas fa-user"></i>
+                    <span>user</span>
+                </a>
+            </li>
+            <li>
+                <a href="futsal.html">
+                    <i class="fas fa-football"></i>
+                    <span>Futsal</span>
+                </a>
+            </li>
+            <li>
+                <a href="AddFutsal.html">
+                    <i class="fas fa-add"></i>
+                    <span>Add Futsal</span>
+                </a>
+            </li>
+            <li>
+                <a href="booked.html">
+                    <i class="fas fa-check"></i>
+                    <span>Booked Futsal</span>
+                </a>
+            </li>
+            <li>
+                <a href="UpdateFutsal.html">
+                    <i class="fas fa-pen-to-square"></i>
+                    <span>Update Futsal</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Setting</span>
+                </a>
+            </li>
+            <li class="logout">
+                <a href="#">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    </div>
+
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>ADD</span>
+                <h2>Futsal</h2>
+            </div>
+            <div class="user--info">
+                <div class="searh--box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="search">
+                </div>
+            </div>
+        </div>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+
+            .container {
+                margin: 50px auto;
+                width: 80%;
+            }
+
+            .card {
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+
+            .card-title {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            .form-group {
+                margin-bottom: 20px;
+            }
+
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            input[type="text"],
+            textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                resize: vertical;
+            }
+
+            input[type="file"] {
+                width: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: #007bff;
+                border: none;
+                color: #fff;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+
+        <body>
+            <div class="container">
+                <div class="card">
+                    <h1 class="card-title">Add Futsal</h1>
+                    <form action="/submit_futsal" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="futsal_name">Name of Futsal:</label>
+                            <input type="text" id="futsal_name" name="futsal_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea id="description" name="description" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="main_image">Choose Main Image for Display:</label>
+                            <input type="file" id="main_image" name="main_image" accept="image/*" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gallery_images">Choose Image(s) for Gallery:</label>
+                            <input type="file" id="gallery_images" name="gallery_images[]" accept="image/*" multiple
+                                required>
+                        </div>
+                        <button type="submit">Add Futsal</button>
+                    </form>
+                </div>
+            </div>
+        </body>
+
+</body>
+
+</html>
