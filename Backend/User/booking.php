@@ -16,7 +16,7 @@
         <nav class="navbar">
             <a href="homepage.html">Home</a>
             <a href="#">About Us</a>
-            <a href="./profile.html">Profile</a>
+            <a href="#">Review</a>
             <a href="#">Contact</a>
             <a href="#">Book</a>
             <a href="login.html"><button class="btnLogin-popup">Login</button></a>

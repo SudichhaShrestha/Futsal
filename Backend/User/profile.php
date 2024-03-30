@@ -16,12 +16,12 @@
         <div id="menu-bar" class="fa fa-bars"></div>
         <a href="#" class="logo"><span>G</span>oalz</a>
         <nav class="navbar">
-            <a href="./homepage.html">Home</a>
+            <a href="homepage.php">Home</a>
             <a href="#">About Us</a>
             <a href="#">Review</a>
-            <a href="./profile.html">Profile</a>
+            <a href="#">Contact</a>
             <a href="#">Book</a>
-            <a href="./login.html"><button class="btnLogin-popup">Login</button></a>
+            <a href="login.php"><button class="btnLogin-popup">Login</button></a>
         </nav>
 
         <div class="icons">
@@ -40,7 +40,7 @@
             <div class="Profile_info">
                 <h2>Profile Page</h2>
                 <div class="form-container">
-                        <img src="./assets/images/img.jpg" alt="Profile Picture" class="profile-picture">
+                    <img src="./assets/images/img.jpg" alt="Profile Picture" class="profile-picture">
                     <div class="personal_info">
                         <label for="first-name">First Name</label>
                     </div><br>
@@ -53,10 +53,10 @@
                     <div class="personal_info">
                         <label for="number">Phone</label>
                     </div><br>
-                    <div class="personal_info"> 
+                    <div class="personal_info">
                         <label for="email">Email </label>
                     </div><br>
-                    <a href=""><button class="btnedit">Edit</button></a>
+                    <a href="update.php"><button class="btnedit">Edit</button></a>
                     <a href="#"><button class="btnedit">Logout</button></a>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/homepage.css">
+  <link rel="stylesheet" href="./assets/css/homepage.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Goalz</title>
 </head>
@@ -15,12 +15,12 @@
     <div id="menu-bar" class="fa fa-bars"></div>
     <a href="#" class="logo"><span>G</span>oalz</a>
     <nav class="navbar">
-      <a href="homepage.html">Home</a>
+      <a href="homepage.php">Home</a>
       <a href="#">About Us</a>
-      <a href="./profile.html">Profile</a>
+      <a href="./profile.php">Profile</a>
       <a href="#">Contact</a>
       <a href="#">Book</a>
-      <a href="login.html"><button class="btnLogin-popup">Login</button></a>
+      <a href="login.php"><button class="btnLogin-popup">Login</button></a>
     </nav>
 
     <div class="icons">
@@ -60,22 +60,22 @@
     </div>
     <div class="img-wrap">
       <div class="nearby">
-        <a href="futsal.html"><img src="./assets/images/img.jpg" alt="" /></a>
+        <a href="./futsal.php"><img src="./assets/images/img.jpg" alt="" /></a>
         <h5>Shankhamul Futsal</h5>
       </div>
 
       <div class="nearby">
-        <a href="./futsal.html"><img src="./assets/images/img.jpg" alt="" /></a>
+        <a href="./futsal.php"><img src="./assets/images/img.jpg" alt="" /></a>
         <h5>Kumari Futsal</h5>
       </div>
 
       <div class="nearby">
-        <a href="./futsal.html"><img src="./assets/images/img.jpg" alt="" /></a>
+        <a href="./futsal.php"><img src="./assets/images/img.jpg" alt="" /></a>
         <h5>United Futsal</h5>
       </div>
 
       <div class="nearby">
-        <a href="./futsal.html"><img src="./assets/images/img.jpg" alt="" /></a>
+        <a href="./futsal.php"><img src="./assets/images/img.jpg" alt="" /></a>
         <h5>BCD Futsal</h5>
       </div>
     </div>

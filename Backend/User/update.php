@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/profile.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>User Profile</title>
+    <title>Update Profile</title>
 
 </head>
 
@@ -16,12 +16,12 @@
         <div id="menu-bar" class="fa fa-bars"></div>
         <a href="#" class="logo"><span>G</span>oalz</a>
         <nav class="navbar">
-            <a href="./homepage.html">Home</a>
+            <a href="homepage.php">Home</a>
             <a href="#">About Us</a>
             <a href="#">Review</a>
-            <a href="./profile.html">Profile</a>
+            <a href="#">Contact</a>
             <a href="#">Book</a>
-            <a href="./login.html"><button class="btnLogin-popup">Login</button></a>
+            <a href="login.php"><button class="btnLogin-popup">Login</button></a>
         </nav>
 
         <div class="icons">
@@ -40,24 +40,28 @@
             <div class="Profile_info">
                 <h2>Profile Page</h2>
                 <div class="form-container">
-                        <img src="./assets/images/img.jpg" alt="Profile Picture" class="profile-picture">
+                    <img src="./assets/images/img.jpg" alt="Profile Picture" class="profile-picture">
                     <div class="personal_info">
+                        <input type="text" id="first-name" name="first-name" required>
                         <label for="first-name">First Name</label>
                     </div><br>
                     <div class="personal_info">
+                        <input type="text" id="last-name" name="last-name" required>
                         <label for="last-name">Last Name </label>
                     </div><br>
                     <div class="personal_info">
+                        <input type="text" id="username" name="username" required>
                         <label for="username">Username</label>
                     </div><br>
                     <div class="personal_info">
+                        <input type="number" id="number" name="number" required>
                         <label for="number">Phone</label>
                     </div><br>
-                    <div class="personal_info"> 
+                    <div class="personal_info">
+                        <input type="email" id="email" name="email" required>
                         <label for="email">Email </label>
                     </div><br>
-                    <a href=""><button class="btnedit">Edit</button></a>
-                    <a href="#"><button class="btnedit">Logout</button></a>
+                    <a href="profile.php"><button class="savechanges">Save Changes</button></a>
                 </div>
             </div>
         </form>
