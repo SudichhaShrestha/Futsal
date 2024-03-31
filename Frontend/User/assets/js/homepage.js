@@ -15,23 +15,33 @@ document.addEventListener('DOMContentLoaded', function() {
 // let navbar = document .querySelector('.navbar');
 
 //slider js
+const sliderContainer = document.querySelector('.slider-container');
+const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.imgslider');
 let slideIndex = 0;
-showSlides(slideIndex);
 
-function moveSlide(n) {
-  showSlides(slideIndex += n);
-}
+slides.forEach(slide => {
+  const clonedSlide = slide.cloneNode(true);
+  slider.appendChild(clonedSlide);
+});
 
-function showSlides(n) {
-  const slides = document.querySelectorAll('.imgslider');
-  
-  if (n >= slides.length) {
+function moveSlide() {
+  slideIndex++;
+  if (slideIndex >= slides.length) {
     slideIndex = 0;
-  } else if (n < 0) {
-    slideIndex = slides.length - 1;
+    slider.style.transition = 'none';
+    slider.style.transform = `translateX(0)`;
+    setTimeout(() => {
+      slider.style.transition = 'transform 0.7s ease-in-out';
+    }, 50); 
+  } else {
+    slider.style.transition = 'transform 0.7s ease-in-out';
   }
-
-  slides.forEach(slide => slide.style.display = 'none');
-  slides[slideIndex].style.display = 'block';
+  slider.style.transform = `translateX(-${slideIndex * slides[0].clientWidth}px)`;
 }
+
+setInterval(moveSlide, 10000); 
+
+
+
 
