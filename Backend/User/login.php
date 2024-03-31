@@ -1,11 +1,12 @@
 <?php
 include_once './assets/includes/header.php';
 include './assets/includes/connect.php';
+require_once './assets/includes/function.php';
+// registerlogin();
 ?>
 
 <?php
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if (isset($_POST['register'])) {
   global $con;
   $firstname = mysqli_real_escape_string($con, $_POST["fname"]);
   $lastname = mysqli_real_escape_string($con, $_POST["lname"]);
@@ -38,6 +39,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
   }
 }
+
+if (isset($_POST['test'])) {
+  $username = $_POST['username'];
+  $email = $_POST['username'];
+  $password = $_POST['password'];
+  registerlogin($username, $email, $password);
+}
 ?>
 
 <!--Login start-->
@@ -49,27 +57,27 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
           <ion-icon name="close-outline"></ion-icon>
         </span>
         <h2>Login</h2>
-        <form action="#">
+        <form action="#" method="post">
           <div class="input-box">
             <span class="icon">
               <ion-icon name="person-circle-outline "></ion-icon>
             </span>
-            <input type="text" required />
+            <input type="text" name="username" required />
             <label>Username</label>
           </div>
           <div class="input-box">
             <span class="icon">
               <ion-icon name="lock-open"></ion-icon>
             </span>
-            <input type="password" required />
+            <input name="password" type="password" class="password" required />
             <label>Password</label>
           </div>
           <div class="remember-forgot">
             <label><input type="checkbox" />Remember me</label>
             <a href="#">Forgot Password?</a>
           </div>
-          <button type="submit" class="btn" name="login">
-            <a href="./profile.php" class="login">Login</a>
+          <button type="submit" class="btn" name="test">
+            <a href="#" class="login">Login</a>
           </button>
           <div class="login-register">
             <p>
@@ -155,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
               condition</label>
           </div>
 
-          <button type="submit" class="btn" name="submit">Register</button>
+          <button type="submit" class="btn" name="register">Register</button>
 
           <div class="login-register">
             <p>
