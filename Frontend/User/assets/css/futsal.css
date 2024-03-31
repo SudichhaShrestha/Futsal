@@ -153,7 +153,7 @@ color: var(--orange);
 
 
 /*Start of body style*/
-.container {
+.containers {
 display: grid;
 place-items: center;
 height: 100vh;
@@ -246,7 +246,7 @@ text-decoration: none;
 .image{
   padding-bottom: 25px;
 }
-.btn {
+.btnn {
 width: 86px;
 height: 35px;
 background: transparent;
@@ -262,17 +262,17 @@ display: flex;
 padding-left: 3px;
 }
 
-.btn a {
+.btnn a {
 text-decoration: none;
 font-size: 1.8em;
 padding: 50px 0 50px 0;
 color: #000;
 }
 
-.btn a:hover {
+.btnn a:hover {
   color: var(--orange);
 }
-.btn:hover{
+.btnn:hover{
   color: var(--orange);
   background-color: #71f1e8;
 }

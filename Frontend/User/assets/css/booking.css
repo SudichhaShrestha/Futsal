@@ -149,11 +149,11 @@ header .search-bar-container label:hover{
 color: var(--orange);
 }
 
-.page{
+.book{
 padding: 50px 150px;
 }
 
-.container {
+.contain {
 display: grid;
 place-items: center;
 height: 100vh;
@@ -161,27 +161,27 @@ padding: 0px 50px 50px 50px;
 background-color: #a3c58577;
 }
 
-.grid-container {
+.grid-contain {
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-gap: 20px;
 }
 
-.mainimg {
+.imgs {
 width: 450px;
 height: 450px;
 object-fit: cover;
 }
 
-.column {
+.acolumn {
 padding: 0px 50px 100px 50px;
 }
-.column h1{
+.acolumn h1{
 font-size: 5em;
 padding: 40px 0px 35px 0;
 }
 
-.form input{
+.forms input{
 height: 35px;
 width: 250px;
 outline: #000;
@@ -191,11 +191,11 @@ background-color: transparent;
 font-size: 1.8em;
 }
 
-.dcolumn {
+.bcolumn {
 padding: 200px 0 0 0;
 }
 
-.btn {
+.btns {
 width: 86px;
 height: 35px;
 background: transparent;
@@ -211,17 +211,17 @@ display: flex;
 padding-left: 3px;
 }
 
-.btn a {
+.btns a {
 text-decoration: none;
 font-size: 1.8em;
 padding: 50px 0 50px 0;
 color: #000;
 }
 
-.btn a:hover {
+.btns a:hover {
 color: var(--orange);
 }
-.btn:hover{
+.btns:hover{
 color: var(--orange);
 background-color: #71f1e8;
 }
