@@ -1,41 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/profile.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Update Profile</title>
-
-</head>
-
-<body>
-
-    <header class="site-header">
-        <div id="menu-bar" class="fa fa-bars"></div>
-        <a href="#" class="logo"><span>G</span>oalz</a>
-        <nav class="navbar">
-            <a href="homepage.php">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Review</a>
-            <a href="#">Contact</a>
-            <a href="#">Book</a>
-            <a href="login.php"><button class="btnLogin-popup">Login</button></a>
-        </nav>
-
-        <div class="icons">
-            <i class="fa fa-search" id="search-btn"></i>
-        </div>
-
-        <form action="" class="search-bar-container">
-            <input type="search" id="search-bar" placeholder="search here...">
-            <label for="search-bar" class="fa fa-search"></label>
-        </form>
-    </header>
-    <!--End of header-->
+<?php
+    include_once './assets/includes/header.php';
+    ?>
     <!-- Start of body -->
-    <div class="container">
+    <div class="containerp">
         <form action="#">
             <div class="Profile_info">
                 <h2>Profile Page</h2>

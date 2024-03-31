@@ -18,5 +18,14 @@ function registerlogin($username, $email, $password)
   } else {
     echo '<script>alert("Invalid username")</script>';
   }
-  
+}
+
+
+
+function is_login(){
+  if (isset($_SESSION['user_id'])) :
+    return true;
+else :
+    return false;
+endif;
 }

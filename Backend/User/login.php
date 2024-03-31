@@ -50,7 +50,7 @@ if (isset($_POST['test'])) {
 
 <!--Login start-->
 <section class="login-page">
-  <div class="container">
+  <div class="container02">
     <div class="wrapper" id="wrapper">
       <div class="form-box login">
         <span class="icon-close">
@@ -76,7 +76,7 @@ if (isset($_POST['test'])) {
             <label><input type="checkbox" />Remember me</label>
             <a href="#">Forgot Password?</a>
           </div>
-          <button type="submit" class="btn" name="test">
+          <button type="submit" class="btn02" name="test">
             <a href="#" class="login">Login</a>
           </button>
           <div class="login-register">
@@ -163,7 +163,7 @@ if (isset($_POST['test'])) {
               condition</label>
           </div>
 
-          <button type="submit" class="btn" name="register">Register</button>
+          <button type="submit" class="btn02" name="register">Register</button>
 
           <div class="login-register">
             <p>
