@@ -229,3 +229,139 @@ background-color: #71f1e8;
 .person {
 padding-bottom: 20px;
 }
+
+
+
+
+
+
+.popup{
+    width: 400px;
+    background: rgb(250, 248, 248);
+    border-radius: 6px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-50%)scale(0.1);
+    text-align: center;
+    padding: 0 30px 30px;
+    color: rgb(8, 8, 8);
+    visibility: hidden;
+    transition: transform 0.4s,top 0.4s;
+}
+
+.open-popup{
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%,-50%)scale(1);
+}
+
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: rgb(255, 255, 255);
+}
+
+.popup h2{
+    font-size: 38PX;
+    font-weight: 500;
+    margin: 30px 0 10px;
+}
+
+.popup button{
+    width: 100%;
+    margin-top: 50px;
+    padding: 10px 0;
+    background: rgb(42, 222, 18);
+    color: rgb(233, 239, 232);
+    border: 0;
+    outline: none;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: rgb(255, 255, 255);
+}
+
+
+
+
+/* footer section */
+footer {
+    background-color: rgb(10, 10, 10);
+  }
+  
+  .footer-Container {
+    width: 100%;
+    padding: 70px 30px 20px;
+  }
+  
+  .socialicons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .socialicons a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 50%;
+  }
+  
+  .socialicons a i{
+    font-size: 2.5em;
+    color: #000;
+    opacity: 0.9;
+  }
+  
+  .socialicons a:hover{
+    color: black;
+    transition: 0.5s;
+  }
+  
+  .socialicons a:hover i{
+    color: white;
+    transition: 0.5s;
+  }
+  
+  .footernav{
+    margin: 30px 0;
+  }
+  
+  .footernav ul{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footernav ul li a{
+    color: #fff;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1.5em;
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+  
+  .footernav ul li a:hover{
+    opacity: 1;
+  }
+  
+  .footerbottom{
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+  }
+  
+  .footerbottom p{
+    color: white;
+  }
+  
+  .designer {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+  }

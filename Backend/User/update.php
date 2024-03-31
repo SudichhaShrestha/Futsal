@@ -33,6 +33,9 @@
             </div>
         </form>
     </div>
+    <?php
+    include_once './assets/includes/footer.php';
+    ?>
     <script src="/assets/js/homepage.js"></script>
 </body>
 

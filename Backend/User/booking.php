@@ -30,7 +30,13 @@
                             </div>
                         </div><br><br>
 
-                        <div class="btn"><a href="#">Book Now</a></div>
+                        <div class="btns" id="bookNowButton"><a href="#" onclick="openPopup()">Book Now</a></div>
+                        <div class="popup" id="popupContent">
+                            <img src="./assets/images/correct.jpg">
+                            <h2>Thank You!</h2>
+                            <p>Your futsal has been booked. Thanks!</p>
+                            <button type="button" onclick="closePopup()">OK</button>
+                        </div>
                     </div>
                 </div><br><br>
 
@@ -38,6 +44,10 @@
         </form>
     </div>
     </div>
-</body>
+    <?php
+    include_once './assets/includes/footer.php';
+    ?>
+    <script src="./assets/js/futsal.js"></script>
+    </body>
 
-</html>
+    </html>

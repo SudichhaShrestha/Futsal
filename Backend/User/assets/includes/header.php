@@ -12,6 +12,7 @@ require_once './assets/includes/function.php';
     <link rel="stylesheet" href="./assets/css/futsal.css">
     <link rel="stylesheet" href="./assets/css/homepage.css">
     <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Goalz</title>
 </head>
 <body>

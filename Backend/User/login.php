@@ -176,7 +176,9 @@ if (isset($_POST['test'])) {
     </div>
   </div>
 </section>
-
+<?php
+  include_once './assets/includes/footer.php';
+?>
 <script src="./assets/js/index.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/

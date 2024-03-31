@@ -23,3 +23,17 @@ function openModal(imagePath) {
         searchBar.classList.toggle('active');
     });
 });
+
+
+
+
+
+let popupContent = document.getElementById("popupContent");
+
+function openPopup() {
+popupContent.classList.add("open-popup");
+}
+
+function closePopup() {
+popupContent.classList.remove("open-popup");
+}

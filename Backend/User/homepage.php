@@ -1,5 +1,6 @@
 <?php
     include_once './assets/includes/header.php';
+    include './assets/includes/connect.php';
 ?>
   
   <div class="container12">
@@ -23,6 +24,10 @@
       </div>
     </div>
   </div>
+  <?php
+  global $con;
+  $sql = "SELECT * FROM futsal_info LIMIT 4";
+  $result = mysqli_query($con, $sql); ?>
   <div class="futsal-container">
     <div class="futsal-demo">
       <div class="nearfutsal">
@@ -30,29 +35,31 @@
       </div>
     </div>
     <div class="img-wrap">
-      <div class="nearby">
-        <a href="./futsal.php"><img src="./assets/images/img.jpg" alt="" /></a>
-        <h5>Shankhamul Futsal</h5>
-      </div>
-
-      <div class="nearby">
-        <a href="./futsal.php"><img src="./assets/images/img.jpg" alt="" /></a>
-        <h5>Kumari Futsal</h5>
-      </div>
-
-      <div class="nearby">
-        <a href="./futsal.php"><img src="./assets/images/img.jpg" alt="" /></a>
-        <h5>United Futsal</h5>
-      </div>
-
-      <div class="nearby">
-        <a href="./futsal.php"><img src="./assets/images/img.jpg" alt="" /></a>
-        <h5>BCD Futsal</h5>
+      <?php
+    if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="nearby">';
+                    ?>
+                    <figure>
+                        <a href="futsal.php?id=<?php echo $row['id']; ?>">
+                            <img src="<?php echo $row['img_path']; ?>" alt="<?php echo $row['name']; ?>" />
+                        </a>
+                    </figure>
+                    <?php
+                    echo '<h5>' . $row['name'] . '</h5>';
+                    echo '</div>';
+                }
+            } else {
+                echo "No products found.";
+            }
+            ?>
       </div>
     </div>
   </div>
 
-
+  <?php
+    include_once './assets/includes/footer.php';
+  ?>
   <script src="./assets/js/homepage.js"></script>
 </body>
 </html>

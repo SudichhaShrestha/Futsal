@@ -297,6 +297,88 @@ img {
 
 
 
+/* footer section */
+footer {
+  background-color: rgb(10, 10, 10);
+}
+
+.footer-Container {
+  width: 100%;
+  padding: 70px 30px 20px;
+}
+
+.socialicons {
+  display: flex;
+  justify-content: center;
+}
+
+.socialicons a{
+  text-decoration: none;
+  padding: 10px;
+  background-color: #fff;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.socialicons a i{
+  font-size: 2.5em;
+  color: #000;
+  opacity: 0.9;
+}
+
+.socialicons a:hover{
+  color: black;
+  transition: 0.5s;
+}
+
+.socialicons a:hover i{
+  color: white;
+  transition: 0.5s;
+}
+
+.footernav{
+  margin: 30px 0;
+}
+
+.footernav ul{
+  display: flex;
+  justify-content: center;
+}
+
+.footernav ul li a{
+  color: #fff;
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.5em;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+.footernav ul li a:hover{
+  opacity: 1;
+}
+
+.footerbottom{
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.footerbottom p{
+  color: white;
+}
+
+.designer {
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0px 5px;
+}
+
+
+
 
 /* media queries */
 
