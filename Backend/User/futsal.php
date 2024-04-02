@@ -15,7 +15,7 @@ if (mysqli_num_rows($result) > 0) {
   <div class="containerft">
     <div class="grid-container">
       <div class="column">
-        <h1>Shankhamul Futsal</h1>
+        <h1><?php echo $row['name'];?></h1>
         <img src="<?php echo $row ['img_path'];?>" width="300px" class="mainimg">
         <div class="gallery">
           <div class="image">
