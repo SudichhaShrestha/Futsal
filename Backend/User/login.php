@@ -8,18 +8,18 @@ require_once './assets/includes/function.php';
 <?php
 if (isset($_POST['register'])) {
   global $con;
-  $firstname = mysqli_real_escape_string($con, $_POST["fname"]);
-  $lastname = mysqli_real_escape_string($con, $_POST["lname"]);
-  $username = mysqli_real_escape_string($con, $_POST["username"]);
-  $phone = mysqli_real_escape_string($con, $_POST["phone"]);
-  $email = mysqli_real_escape_string($con, $_POST["email"]);
-  $password = mysqli_real_escape_string($con, $_POST["password"]);
-  $cpassword = mysqli_real_escape_string($con, $_POST["cpassword"]);
+  $firstname = $_POST["fname"];
+  $lastname = $_POST["lname"];
+  $username = $_POST["username"];
+  $phone = $_POST["phone"];
+  $email = $_POST["email"];
+  $password = $_POST["password"];
+  $cpassword = $_POST["cpassword"];
   $profile = $_FILES['picprofile'];
 
   $picname = rand(1000, 10000) . '-' . $profile['name'];
   $tname = $profile['tmp_name'];
-  $upload_dir = $_SERVER['DOCUMENT_ROOT'] . '/booking/Backend/User/uploads/';
+  $upload_dir = './uploads/';
   move_uploaded_file($tname, $upload_dir . $picname);
 
   $duplicate = mysqli_query($con, "SELECT * FROM `user` WHERE username='$username'OR email='$email'");
@@ -177,7 +177,7 @@ if (isset($_POST['test'])) {
   </div>
 </section>
 <?php
-  include_once './assets/includes/footer.php';
+include_once './assets/includes/footer.php';
 ?>
 <script src="./assets/js/index.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

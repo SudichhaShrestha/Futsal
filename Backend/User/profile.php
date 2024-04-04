@@ -10,6 +10,9 @@
             $row = mysqli_fetch_assoc($result);
         }
     }
+    else{
+        header('Location: login.php');
+    }
 ?>
     <!-- Start of body -->
     <div class="containerp">
