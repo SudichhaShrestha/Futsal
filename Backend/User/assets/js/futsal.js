@@ -28,12 +28,12 @@ function openModal(imagePath) {
 
 
 
-// let popupContent = document.getElementById("popupContent");
+let popupContent = document.getElementById("popupContent");
 
-// function openPopup() {
-// popupContent.classList.add("open-popup");
-// }
+function openPopup() {
+popupContent.classList.add("open-popup");
+}
 
-// function closePopup() {
-// popupContent.classList.remove("open-popup");
-// }
+function closePopup() {
+popupContent.classList.remove("open-popup");
+}

@@ -15,16 +15,10 @@ function registerlogin($username, $email, $password)
     } else {
       echo '<script>alert("Incorrect password")</script>';
     }
-   if ($user_data['usertype'] == "admin") {
-      header("Location: ../Admin/Admin.php");
-    } else {
-      echo '<script>alert("Invalid user type")</script>';
-    }
   } else {
-    echo '<script>alert("User not found")</script>';
+    echo '<script>alert("Invalid username")</script>';
   }
 }
-
 
 
 

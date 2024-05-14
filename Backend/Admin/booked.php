@@ -1,3 +1,9 @@
+<?php
+include("./assets/php/db.php");
+include("adminnotlogin.php");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,40 +19,40 @@
 
 
     <div class="sidebar">
-        <div class="logo"></div>
+    <div class="logo"><img src="./img/logo.png" alt=""></div>
         <ul class="menu">
             <li class="active">
-                <a href="Admin.html">
+                <a href="Admin.php">
                     <i class="fas fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="user.html">
+                <a href="user.php">
                     <i class="fas fa-user"></i>
                     <span>user</span>
                 </a>
             </li>
             <li>
-                <a href="futsal.html">
+                <a href="futsal.php">
                     <i class="fas fa-football"></i>
                     <span>Futsal</span>
                 </a>
             </li>
             <li>
-                <a href="AddFutsal.html">
+                <a href="AddFutsal.php">
                     <i class="fas fa-add"></i>
                     <span>Add Futsal</span>
                 </a>
             </li>
             <li>
-                <a href="booked.html">
+                <a href="booked.php">
                     <i class="fas fa-check"></i>
                     <span>Booked Futsal</span>
                 </a>
             </li>
             <li>
-                <a href="UpdateFutsal.html">
+                <a href="UpdateFutsal.php">
                     <i class="fas fa-pen-to-square"></i>
                     <span>Update Futsal</span>
                 </a>
@@ -58,7 +64,7 @@
                 </a>
             </li>
             <li class="logout">
-                <a href="#">
+                <a href="logout.php">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>

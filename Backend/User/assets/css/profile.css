@@ -62,55 +62,24 @@
   padding: 0 35px 0 5px;
   font-size: 2em;
 }
+.btnedit{
+  font-size: 2em;
+  color: #000;
+}
+.btnedit:hover{
+  background: #000;
+  color: orange;
+}
 .form-container{
   background-color: rgba(0, 255, 255, 0.156);
   padding-left: 200px;
 }
-
-.link-edit {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #007bff; 
-  color: #fff; 
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+.savechanges{
+  width: 30%;
+  font-size: 2em;
+  color: #000;
 }
-
-.link-edit:hover {
-  background-color: #0056b3; 
-}
-
-.link-edit {
-  margin-right: 10px; 
-}
-
-
-.file-input {
-  display: none;
-}
-
-.edit-button {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 252, 252, 0.5);
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.edit-profile-picture:hover .edit-button {
-  display: inline-block;
-}
-
-.image-container {
-  position: relative;
-  display: inline-block;
+.savechanges:hover{
+  background: #000;
+  color: orange;
 }

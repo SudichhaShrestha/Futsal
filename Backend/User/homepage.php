@@ -50,7 +50,7 @@
                     echo '</div>';
                 }
             } else {
-                echo "No Futsal found.";
+                echo "No products found.";
             }
             ?>
       </div>

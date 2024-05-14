@@ -1,4 +1,8 @@
+<?php
+include("./assets/php/db.php");
+include("adminnotlogin.php");
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,40 +18,40 @@
 
 
     <div class="sidebar">
-        <div class="logo"></div>
+    <div class="logo"><img src="./img/logo.png" alt=""></div>
         <ul class="menu">
             <li class="active">
-                <a href="Admin.html">
+                <a href="Admin.php">
                     <i class="fas fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="user.html">
+                <a href="user.php">
                     <i class="fas fa-user"></i>
                     <span>user</span>
                 </a>
             </li>
             <li>
-                <a href="futsal.html">
+                <a href="futsal.php">
                     <i class="fas fa-football"></i>
                     <span>Futsal</span>
                 </a>
             </li>
             <li>
-                <a href="AddFutsal.html">
+                <a href="AddFutsal.php">
                     <i class="fas fa-add"></i>
                     <span>Add Futsal</span>
                 </a>
             </li>
             <li>
-                <a href="booked.html">
+                <a href="booked.php">
                     <i class="fas fa-check"></i>
                     <span>Booked Futsal</span>
                 </a>
             </li>
             <li>
-                <a href="UpdateFutsal.html">
+                <a href="UpdateFutsal.php">
                     <i class="fas fa-pen-to-square"></i>
                     <span>Update Futsal</span>
                 </a>
@@ -59,7 +63,7 @@
                 </a>
             </li>
             <li class="logout">
-                <a href="#">
+                <a href="logout.php">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -88,20 +92,34 @@
                         <th>S.N</th>
                         <th>Futsal Name</th>
                         <th>Location</th>
+                        <th>Opening Time</th>
                         <th>Action</th>
                     </tr>
                     <tbody>
+                        <?php  
+                            $selected_futsal  = mysqli_query($conn,"SELECT * FROM `futsal_info`");
+                            $number_futsal = mysqli_num_rows($selected_futsal);
+                            while($row=mysqli_fetch_assoc($selected_futsal)){
+                                $futsal_name = $row['name'];
+                            $futsal_description = $row['opening_time'];
+                            $futsal_location = $row['location'];
+                            $futsal_id = $row['id'];
+                            
+                            
+                            
+                        ?>
                         <tr>
-                            <td>1</td>
-                            <td>Sankhamul Futsal</td>
-                            <td>Sankhamul</td>
-                            <td>Pending</td>
+                            <td> <?php echo $futsal_id ?> </td>
+                            <td> <?php echo $futsal_name ?> </td>
+                            <td> <?php  echo $futsal_location ?></td>
+                            <td><?php echo $futsal_description  ?></td>
                             <td><button>Edits</button></td>
                         </tr>
+                        <?php } ?>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="4">Total:1</td>
+                            <td colspan="4"> <?php  echo $number_futsal ?> </td>
                         </tr>
                     </tfoot>
                 </thead>

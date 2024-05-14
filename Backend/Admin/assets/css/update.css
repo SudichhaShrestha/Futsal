@@ -30,10 +30,11 @@ body{
     width:240px;
     transition: 0.5s;
 }
-.logo{
+.logo img{
     height:80px;
     padding:16px;
-
+    align-items: baseline;
+    margin-right: 100px;
 }
 .menu{
     height:88%;

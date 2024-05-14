@@ -2,51 +2,11 @@
 include_once './assets/includes/header.php';
 include './assets/includes/connect.php';
 require_once './assets/includes/function.php';
+include('../Admin/register.php');
+include('../Admin/login.php');
 // registerlogin();
 ?>
 
-<?php
-if (isset($_POST['register'])) {
-  global $con;
-  $firstname = $_POST["fname"];
-  $lastname = $_POST["lname"];
-  $username = $_POST["username"];
-  $phone = $_POST["phone"];
-  $email = $_POST["email"];
-  $password = $_POST["password"];
-  $cpassword = $_POST["cpassword"];
-  $profile = $_FILES['picprofile'];
-
-  $picname = rand(1000, 10000) . '-' . $profile['name'];
-  $tname = $profile['tmp_name'];
-  $upload_dir = './uploads/';
-  move_uploaded_file($tname, $upload_dir . $picname);
-
-  $duplicate = mysqli_query($con, "SELECT * FROM `user` WHERE username='$username'OR email='$email'");
-  if (mysqli_num_rows($duplicate) > 0) {
-    echo "<script>alert('Username or Email Has Already Been Taken');</script>";
-  } else {
-    if ($password == $cpassword) {
-      $insertquery = "INSERT INTO `user`(firstname,lastname,username,phone,email,password,profile) VALUES ('$firstname','$lastname','$username','$phone','$email','$password','$picname')";
-      $result = mysqli_query($con, $insertquery);
-      if ($result) {
-        echo "<script>alert('Account Created Successfully');</script>";
-      } else {
-        die(mysqli_error($con));
-      }
-    } else {
-      echo "<script>alert('Password Does Not Match');</script>";
-    }
-  }
-}
-
-if (isset($_POST['test'])) {
-  $username = $_POST['username'];
-  $email = $_POST['username'];
-  $password = $_POST['password'];
-  registerlogin($username, $email, $password);
-}
-?>
 
 <!--Login start-->
 <section class="login-page">
@@ -76,8 +36,8 @@ if (isset($_POST['test'])) {
             <label><input type="checkbox" />Remember me</label>
             <a href="#">Forgot Password?</a>
           </div>
-          <button type="submit" class="btn02" name="test">
-            <a href="#" class="login">Login</a>
+          <button type="submit" name="login" class="btn02" name="test">
+            <span>login</span>
           </button>
           <div class="login-register">
             <p>
@@ -177,7 +137,7 @@ if (isset($_POST['test'])) {
   </div>
 </section>
 <?php
-include_once './assets/includes/footer.php';
+  include_once './assets/includes/footer.php';
 ?>
 <script src="./assets/js/index.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

@@ -30,10 +30,9 @@ body{
     width:240px;
     transition: 0.5s;
 }
-.logo{
+.logo img{
     height:80px;
     padding:16px;
-
 }
 .menu{
     height:88%;
@@ -155,7 +154,7 @@ active{
     background: #a3c585;
     border-radius: 10px;
     padding: 1.2rem;
-    width: 290px;
+    width: 250px;
     height: 150px;
     display: flex;
     flex-direction: column;
@@ -220,6 +219,9 @@ active{
 .light-blue{
     background: #75975e;
 }
+.light-yellow{
+    background: #658354;
+}
 .dark-green{
     background: rgb(13, 135, 54);
 }
@@ -231,6 +233,9 @@ active{
 }
 .dark-blue{
     background: rgb(9, 9, 118);
+}
+.dark-orange{
+    background: rgb(94, 2, 186);
 }
 
 /*tabular--wrapper*/

@@ -1,43 +1,30 @@
 <?php
     include_once './assets/includes/header.php';
-    include './assets/includes/connect.php';
-    
-    if (isset ($_SESSION['user_id'])){
-        $profileid = $_SESSION['user_id'];
-        $sql = "SELECT * FROM user WHERE id = $profileid";
-        $result = mysqli_query($con, $sql);
-        if (mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-        }
-    }
-    else{
-        header('Location: login.php');
-    }
-?>
+    ?>
     <!-- Start of body -->
     <div class="containerp">
         <form action="#">
             <div class="Profile_info">
                 <h2>Profile Page</h2>
                 <div class="form-container">
-                    <img src="./uploads/<?php echo $row ['profile'];?>" alt="Profile Picture" class="profile-picture">
+                    <img src="./assets/images/img.jpg" alt="Profile Picture" class="profile-picture">
                     <div class="personal_info">
-                        <label for="first-name"><?php echo $row ['firstname'];?></label>
+                        <label for="first-name">First Name</label>
                     </div><br>
                     <div class="personal_info">
-                        <label for="last-name"><?php echo $row ['lastname'];?></label>
+                        <label for="last-name">Last Name </label>
                     </div><br>
                     <div class="personal_info">
-                        <label for="username"><?php echo $row ['username'];?></label>
+                        <label for="username">Username</label>
                     </div><br>
                     <div class="personal_info">
-                        <label for="number"><?php echo $row ['phone'];?></label>
+                        <label for="number">Phone</label>
                     </div><br>
                     <div class="personal_info">
-                        <label for="email"> <?php echo $row ['email'];?> </label>
+                        <label for="email">Email </label>
                     </div><br>
-                   <a href="./update.php" class="link-edit">Edit</a>
-                   <a href="./logout.php" class="link-edit">Logout</a>
+                    <a href="update.php"><button class="btnedit">Edit</button></a>
+                    <a href="#"><button class="btnedit">Logout</button></a>
                 </div>
             </div>
         </form>
