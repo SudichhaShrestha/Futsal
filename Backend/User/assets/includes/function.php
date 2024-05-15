@@ -9,16 +9,22 @@ function registerlogin($username, $email, $password)
     $user_data = mysqli_fetch_assoc($query);
     $db_pass = $user_data['password'];
     if ($db_pass == $password) {
-      $_SESSION['user_id'] = $user_data["id"];
-      echo '<script>alert("Login Successfully")</script>';
-      header("Location: homepage.php");
+        $_SESSION['user_id'] = $user_data["id"];
+        echo '<script>alert("Login Successfully")</script>';
+        if ($user_data['usertype'] == "admin") {
+            header("Location: ../Admin/Admin.php");
+        } else {
+            header("Location: homepage.php");
+        }
     } else {
-      echo '<script>alert("Incorrect password")</script>';
+        echo '<script>alert("Incorrect password")</script>';
     }
-  } else {
-    echo '<script>alert("Invalid username")</script>';
-  }
+} else {
+    echo '<script>alert("User not found")</script>';
 }
+
+}
+
 
 
 

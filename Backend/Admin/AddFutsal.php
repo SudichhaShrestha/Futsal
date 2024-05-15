@@ -1,126 +1,93 @@
 <?php
-include("./assets/php/db.php");
-include("adminnotlogin.php");
-include("futsalbackend.php");
 
+include("./assets/includes/sidebar.php");
+include './assets/includes/connect.php';
+?>
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $futsal_name = $_POST['futsal_name'];
+    $description = $_POST['description'];
+    $location = $_POST['location'];
+    $price_per_hour = $_POST['price_per_hour'];
+    $opening_time = $_POST['opening_time'];
+    $closing_time = $_POST['closing_time'];
+    $parking_available = isset($_POST['parking_available']) ? 1 : 0; 
+
+
+    $main_image = $_FILES['main_image']['name'];
+    $main_image_temp = $_FILES['main_image']['tmp_name'];
+    move_uploaded_file($main_image_temp, "uploads/" . $main_image);
+
+
+    $query = "INSERT INTO futsal_info (name, description, location, price_per_hour, opening_time, closing_time, parking_available, img_path) 
+    VALUES ('$futsal_name', '$description', '$location', $price_per_hour, '$opening_time', '$closing_time', $parking_available, '$main_image')";
+
+
+    if (mysqli_query($con, $query)) {
+        echo "Futsal added successfully.";
+    } else {
+        echo "Error: " . $query . "<br>" . mysqli_error($con);
+    }
+}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/addfutsal.css">
-    <!--emoji link-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <title>Add Futsal</title>
-</head>
-
-<body>
-    <div class="sidebar">
-    <div class="logo"><img src="./img/logo.png" alt=""></div>
-        <ul class="menu">
-            <li class="active">
-                <a href="Admin.php">
-                    <i class="fas fa-dashboard"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="user.php">
-                    <i class="fas fa-user"></i>
-                    <span>user</span>
-                </a>
-            </li>
-            <li>
-                <a href="futsal.php">
-                    <i class="fas fa-football"></i>
-                    <span>Futsal</span>
-                </a>
-            </li>
-            <li>
-                <a href="AddFutsal.php">
-                    <i class="fas fa-add"></i>
-                    <span>Add Futsal</span>
-                </a>
-            </li>
-            <li>
-                <a href="booked.php">
-                    <i class="fas fa-check"></i>
-                    <span>Booked Futsal</span>
-                </a>
-            </li>
-            <li>
-                <a href="UpdateFutsal.php">
-                    <i class="fas fa-pen-to-square"></i>
-                    <span>Update Futsal</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-cog"></i>
-                    <span>Setting</span>
-                </a>
-            </li>
-            <li class="logout">
-                <a href="logout.php">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-    </div>
-
-    <div class="main--content">
-        <div class="header--wrapper">
-            <div class="header--title">
-                <span>ADD</span>
-                <h2>Futsal</h2>
-            </div>
-            <div class="user--info">
-                <div class="searh--box">
-                    <i class="fa-solid fa-search"></i>
-                    <input type="text" placeholder="search">
-                </div>
-                <img src="/image/om2.jpg" alt="">
-            </div>
+<div class="main--content">
+    <div class="header--wrapper">
+        <div class="header--title">
+            <span>ADD</span>
+            <h2>Futsal</h2>
         </div>
-          
-        <body>
-            <div class="container">
-                <div class="card">
-                    <h1 class="card-title">Add Futsal</h1>
-                    <form action="AddFutsal.php" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label for="futsal_name">Name of Futsal:</label>
-                            <input type="text" id="futsal_name" name="futsal_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description:</label>
-                            <textarea id="description" name="description" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="location">location:</label>
-                            <textarea id="location" name="location" rows="4" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="main_image">Choose Main Image for Display:</label>
-                            <input type="file" id="main_image" name="main_image" accept="image/*" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="gallery_images">Choose Image(s) for Gallery:</label>
-                            <input type="file" id="gallery_images" name="gallery_images" accept="image/*" multiple
-                                required>
-                        </div>
-                        <button type="submit" name="add_futsal" >Add Futsal</button>
-                    </form>
-                </div>
-            </div>
-        </body>
+    </div>
 
+    <div class="container">
+        <div class="card">
+            <h1 class="card-title">Add Futsal</h1>
+            <form action="#" method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label for="futsal_name">Name of Futsal:</label>
+                    <input type="text" id="futsal_name" name="futsal_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label for="price_per_hour">Price per Hour:</label>
+                    <input type="number" id="price_per_hour" name="price_per_hour" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="opening_time">Opening Time:</label>
+                    <input type="time" id="opening_time" name="opening_time" required>
+                </div>
+                <div class="form-group">
+                    <label for="closing_time">Closing Time:</label>
+                    <input type="time" id="closing_time" name="closing_time" required>
+                </div>
+                <div class="form-group">
+                    <label for="parking_available">Parking Available:</label>
+                    <input type="checkbox" id="parking_available" name="parking_available">
+                </div>
+                <div class="form-group">
+                    <label for="main_image">Choose Main Image for Display:</label>
+                    <input type="file" id="main_image" name="main_image" accept="image/*" required>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="gallery_images">Choose Image(s) for Gallery:</label>
+                    <input type="file" id="gallery_images" name="gallery_images[]" accept="image/*" multiple required>
+                </div> -->
+                <button type="submit">Add Futsal</button>
+            </form>
+
+        </div>
+    </div>
+</div>
 </body>
 
 </html>

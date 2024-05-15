@@ -1,95 +1,92 @@
-
-*{
+* {
     margin: 0px;
     padding: 0px;
     border: none;
     outline: none;
     box-sizing: border-box;
-    font-family: "Poppins",sans-serif;
-
+    font-family: "Poppins", sans-serif;
 }
 
-body{
-
+body {
     display: flex;
-
 }
-.sidebar{
+
+.sidebar {
     position: sticky;
     top: 0;
     left: 0;
     bottom: 0;
     width: 115px;
     height: 100vh;
-    padding:0 1.7rem;
+    padding: 0 1.7rem;
     color: rgb(254, 254, 254);
     overflow: hidden;
     transition: all 0.5s linear;
-    background:#066839;
+    background: #066839;
 }
-.sidebar:hover{
-    width:240px;
+
+.sidebar:hover {
+    width: 240px;
     transition: 0.5s;
 }
-.logo img{
-    height:80px;
-    padding:16px;
-    align-items: baseline;
-    margin-right: 100px;
+
+.logo {
+    height: 80px;
+    padding: 16px;
 }
-.menu{
-    height:88%;
+
+.menu {
+    height: 88%;
     position: relative;
     list-style: none;
     padding: 0;
 }
-.menu li{
+
+.menu li {
     padding: 1rem;
     margin: 8px 0;
     border-radius: 8px;
     transition: all 0.5s;
 }
+
 .menu li:hover,
-active{
+active {
     background: #e0e0e058;
 }
-.menu a{
+
+.menu a {
     color: rgb(0, 0, 0);
     font-size: 14px;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap:1.5rem;
+    gap: 1.5rem;
 }
 
-.menu a span{
+.menu a span {
     overflow: hidden;
 }
-.menu a i{
+
+.menu a i {
     font-size: 1.2rem;
 }
-.logout{
+
+.logout {
     position: absolute;
     bottom: 0;
     left: -30px;
     width: 100%;
-
 }
+
 /*main body section*/
-.main--content{
+.main--content {
     position: relative;
-    background:rgb(225, 223, 223);
+    background: rgb(225, 223, 223);
     width: 100%;
     padding: 1rem;
 }
 
-.header--wrapper img{
-    width:50px;
-    height: 50px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-.header--wrapper{
+.header--wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -100,37 +97,35 @@ active{
     margin-bottom: 1rem;
 }
 
-.header--title{
+.header--title {
     color: #066839;
 }
-.user--info{
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.searh--box{
+
+.searh--box {
     background: rgb(255, 251, 251);
     border-radius: 15px;
-    color:#066839;
+    color: #066839;
     display: flex;
     align-items: center;
     gap: 5px;
     padding: 4px 12px;
 }
 
-.searh--box input{
+.searh--box input {
     background: transparent;
     padding: 10px;
 }
-.searh--box i{
+
+.searh--box i {
     font-size: 1.2rem;
     cursor: pointer;
     transition: all 0.5s;
-
 }
-.searh--box i:hover{
+
+.searh--box i:hover {
     transform: scale(1.2);
 }
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -166,7 +161,7 @@ label {
 }
 
 input[type="text"],
-textarea {
+textarea,input[type="number"] {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;

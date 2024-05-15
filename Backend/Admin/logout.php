@@ -1,7 +1,6 @@
-<?php 
-session_start();
+<?php
+include_once './assets/includes/header.php';
 session_destroy();
-session_unset();
-header('location:../User/homepage.php');
-
+header('Location: homepage.php');
+exit;
 ?>
