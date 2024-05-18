@@ -39,6 +39,8 @@ INSERT INTO `futsal_info` (`id`, `name`, `img_path`, `description`, `location`, 
 (4, 'Royal Futsal', './assets/images/royal.jpg', 'Join the futsal fever sweeping the nation! Gather your squad and take on the challenge of our dynamic futsal leagues, where teamwork and strategy reign supreme.', 'Pushpa Nagar Marg, Kathmandu', 1, 1200.00, '09:00:00', '17:00:00'),
 (5, 'Kathmandu Futsal', './assets/images/kathmandu.jpg', 'Escape the ordinary and dive into the excitement of futsal. From friendly matches to competitive tournaments, there is always something thrilling happening on our courts', 'Bhrikuti, Kathmandu Funpark', 1, 1200.00, '06:00:00', '22:00:00'),
 (6, 'Prime Futsal', './assets/images/prime.jpg', 'Discover the joy of futsal, the ultimate fusion of soccer skills and indoor excitement. Bring your friends, bring your game, and let the good times roll!', 'Gyaneshwor, Kathmandu', 1, 1200.00, '06:00:00', '20:00:00');
+(7, 'United  Futsal', './assets/images/united.jpg', 'Ready for a new soccer challenge? Try futsal: indoor excitement for players of all levels!', 'Bafal, Kathmandu ', 1, 1000.00, '06:00:00', '20:00:00');
+(8, 'Field Futsal', './assets/images/field.jpg', 'Futsal: Where skill meets speed. Join us for electrifying matches and non-stop action!', 'Sanepa, Kathmandu', 1, 1500.00, '07:00:00', '19:00:00');
 
 
 

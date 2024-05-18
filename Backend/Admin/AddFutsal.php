@@ -6,23 +6,24 @@ include './assets/includes/connect.php';
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
     $futsal_name = $_POST['futsal_name'];
     $description = $_POST['description'];
     $location = $_POST['location'];
     $price_per_hour = $_POST['price_per_hour'];
     $opening_time = $_POST['opening_time'];
     $closing_time = $_POST['closing_time'];
-    $parking_available = isset($_POST['parking_available']) ? 1 : 0; 
+    $parking_available = isset($_POST['parking_available']) ? 1 : 0;
 
 
-    $main_image = $_FILES['main_image']['name'];
-    $main_image_temp = $_FILES['main_image']['tmp_name'];
-    move_uploaded_file($main_image_temp, "uploads/" . $main_image);
+    $profile = $_FILES['picprofile'];
+    $picname = rand(1000, 10000) . '-' . $profile['name'];
+    $tname = $profile['tmp_name'];
+    $upload_dir = './uploads/';
+    move_uploaded_file($tname, $upload_dir . $picname);
 
 
     $query = "INSERT INTO futsal_info (name, description, location, price_per_hour, opening_time, closing_time, parking_available, img_path) 
-    VALUES ('$futsal_name', '$description', '$location', $price_per_hour, '$opening_time', '$closing_time', $parking_available, '$main_image')";
+    VALUES ('$futsal_name', '$description', '$location', $price_per_hour, '$opening_time', '$closing_time', $parking_available, '$picname', ')";
 
 
     if (mysqli_query($con, $query)) {
@@ -76,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="form-group">
                     <label for="main_image">Choose Main Image for Display:</label>
-                    <input type="file" id="main_image" name="main_image" accept="image/*" required>
+                    <input type="file" name="picprofile" id="picprofile" require />
                 </div>
                 <!-- <div class="form-group">
                     <label for="gallery_images">Choose Image(s) for Gallery:</label>

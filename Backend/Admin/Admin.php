@@ -1,6 +1,20 @@
 <?php
 include './assets/includes/connect.php';
 include("./assets/includes/sidebar.php");
+
+$sql = "SELECT bookings.id, bookings.person_name, futsal_info.name AS futsal_name, bookings.status AS status, 
+               bookings.booking_datetime, futsal_info.price_per_hour
+        FROM bookings
+        INNER JOIN futsal_info ON bookings.futsal_id = futsal_info.id";
+$results = $con->query($sql);
+
+
+$sql = "SELECT * FROM user ";
+$resultuser = mysqli_query($con, $sql);
+if (mysqli_num_rows($resultuser) > 0) {
+    $row = mysqli_fetch_assoc($resultuser);
+}
+
 ?>
 <div class="main--content">
     <div class="header--wrapper">
@@ -29,22 +43,20 @@ include("./assets/includes/sidebar.php");
                 <div class="card--header">
                     <div class="amount">
                         <span>Booking Order</span>
-                        <span class="amount-value">50</span>
+                        <span class="amount-value"><?php echo mysqli_num_rows($results); ?></span>
                     </div>
                     <i class="fas fa-list icon dark-purple"></i>
                 </div>
-                <span class="card-detail">***** ***** ****06</span>
             </div>
 
             <div class="booking-card light-pink">
                 <div class="card--header">
                     <div class="amount">
                         <span>Users</span>
-                        <span class="amount-value">$500.00</span>
+                        <span class="amount-value"><?php echo mysqli_num_rows($resultuser); ?></span>
                     </div>
                     <i class="fas fa-users icon dark-pink"></i>
                 </div>
-                <span class="card-detail">**** ***** *****06</span>
             </div>
 
             <div class="booking-card light-blue">

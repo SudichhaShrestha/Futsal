@@ -135,6 +135,22 @@ padding: 10px;
 backdrop-filter: blur(10px);
 font-size: 1.3em;
 }
+/* Add this to your existing CSS file */
+.more-content {
+  display: none;
+}
+
+.view-more-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#viewMoreBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 
 /* media queries */
 

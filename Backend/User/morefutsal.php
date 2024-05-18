@@ -3,28 +3,6 @@
     include './assets/includes/connect.php';
 ?>
   
-<div class="container12">
-    <div class="slider-container1">
-        <div class="slider">
-            <img class="imgslider" src="./assets/images/slider1.jpg" alt="">
-            <img class="imgslider" src="./assets/images/slider2.jpg" alt="">
-            <img class="imgslider" src="./assets/images/slider6.jpg" alt="">
-            <img class="imgslider" src="./assets/images/slider4.jpg" alt="">
-            <img class="imgslider" src="./assets/images/slider5.jpg" alt="">
-            <img class="imgslider" src="./assets/images/slider3.jpg" alt="">
-        </div>
-        <div class="info">
-            <h3>Up for a Futsal Match</h3>
-            <p>Book your match from Goalz</p>
-            <div class="sliderbtn">
-                <a href="#" class="btn00">
-                    <h2>Learn More</h2>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
 <?php
 global $con;
 $sql = "SELECT * FROM futsal_info";
@@ -41,7 +19,7 @@ $result = mysqli_query($con, $sql); ?>
         if (mysqli_num_rows($result) > 0) {
             $count = 0;
             while ($row = mysqli_fetch_assoc($result)) {
-                if ($count < 4) {
+                if ($count < 8) {
                     echo '<div class="nearby">';
                 } else {
                     echo '<div class="nearby more-content">';
@@ -62,14 +40,10 @@ $result = mysqli_query($con, $sql); ?>
         }
         ?>
     </div>
-    <div class="view-more-container">
-        <a href="./morefutsal.php"><button id="viewMoreBtn">View More</button></a>
-    </div>
 </div>
 
 <?php
 include_once './assets/includes/footer.php';
 ?>
-<script src="./assets/js/homepage.js"></script>
 </body>
 </html>

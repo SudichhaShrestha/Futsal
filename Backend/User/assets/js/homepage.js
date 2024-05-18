@@ -43,3 +43,19 @@ function moveSlide() {
 setInterval(moveSlide, 10000); 
 
 
+
+// view more 
+
+document.getElementById('viewMoreBtn').addEventListener('click', function() {
+  var moreContent = document.querySelectorAll('.more-content');
+  var isVisible = moreContent[0].style.display === 'block';
+
+  moreContent.forEach(function(element) {
+      element.style.display = isVisible ? 'none' : 'block';
+  });
+
+  this.textContent = isVisible ? 'View More' : 'View Less';
+});
+
+
+
