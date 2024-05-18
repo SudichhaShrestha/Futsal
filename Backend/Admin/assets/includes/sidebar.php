@@ -24,7 +24,7 @@ require_once './assets/includes/function.php';
         <div class="logo"></div>
         <ul class="menu">
             <li class="active">
-                <a href="#">
+                <a href="Admin.php">
                     <i class="fas fa-dashboard"></i>
                     <span>Dashboard</span>
                 </a>

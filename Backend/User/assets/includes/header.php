@@ -12,6 +12,7 @@ require_once './assets/includes/function.php';
     <link rel="stylesheet" href="./assets/css/futsal.css">
     <link rel="stylesheet" href="./assets/css/homepage.css">
     <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="./assets/css/userorder.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Goalz</title>
 </head>
@@ -24,9 +25,9 @@ require_once './assets/includes/function.php';
         <a href="#">About Us</a>
         <a href="./profile.php">Profile</a>
         <a href="#">Contact</a>
-        <a href="#">Book</a>
         <?php
         if (is_login()):?>
+        <a href="./bookeduser.php">Book</a>
         <a href="./logout.php"><button class="btnLogin-popup">Logout</button></a>
         <?php
         else: ?>

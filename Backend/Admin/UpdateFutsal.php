@@ -18,6 +18,7 @@ if (isset($_GET['id'])) {
 
     if (mysqli_num_rows($result) > 0) {
         $futsal = mysqli_fetch_assoc($result);
+        $futsal_id = $futsal['id'];
         $futsal_name = $futsal['name'];
         $description = $futsal['description'];
         $price_per_hour = $futsal['price_per_hour'];
@@ -42,10 +43,11 @@ if (isset($_GET['id'])) {
             <h2>Futsal</h2>
         </div>
         <div class="user--info">
-            <?php if (isset($user['profile']) && !empty($user['profile'])) { ?>
-                <img src="../User/uploads/<?php echo ($user['profile']); ?>" alt="Profile Picture" class="profile-picture">
+            <?php if (isset($row['profile']) && !empty($row['profile'])) { ?>
+                <a href="../User/profile.php"><img src="../User/uploads/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-picture"></a>
+
             <?php } else { ?>
-                <img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture">
+                <a href="../User/profile.php"><img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture"></a>
             <?php } ?>
         </div>
     </div>
@@ -63,7 +65,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="form-group">
                     <label for="price_per_hour">Price per Hour:</label>
-                    <input type="number" id="price_per_hour" name="price_per_hour" min="0" value="<?php echo($price_per_hour); ?>" required>
+                    <input type="number" id="price_per_hour" name="price_per_hour" min="0" value="<?php echo ($price_per_hour); ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="opening_time">Opening Time:</label>
@@ -81,6 +83,7 @@ if (isset($_GET['id'])) {
                     <label for="main_image">Choose Main Image for Display:</label>
                     <input type="file" id="main_image" name="main_image" accept="image/*">
                 </div>
+                <input type="hidden" name="futsal_id" value="<?php echo $futsal_id; ?>">
                 <button type="submit" name="savechanges">Update</button>
             </form>
         </div>

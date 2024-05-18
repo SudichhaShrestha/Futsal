@@ -34,11 +34,11 @@ if (isset($_POST['edit_user'])) {
         </div>
         <div class="user--info">
             <?php if (isset($row['profile']) && !empty($row['profile'])) { ?>
-                <img src="../User/uploads/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-picture">
+                <a href="../User/profile.php"><img src="../User/uploads/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-picture"></a>
+                
             <?php } else { ?>
-                <img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture">
-            <?php }
-            ?>
+                <a href="../User/profile.php"><img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture"></a>
+            <?php } ?>
         </div>
     </div>
 
