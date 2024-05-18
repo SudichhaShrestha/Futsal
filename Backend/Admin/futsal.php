@@ -1,7 +1,15 @@
 <?php
 
 include("./assets/includes/sidebar.php");
-include './assets/includes/connect.php';
+include ('./assets/includes/connect.php');
+if (isset ($_SESSION['user_id'])){
+    $profileid = $_SESSION['user_id'];
+    $sql = "SELECT * FROM user WHERE id = $profileid";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+    }
+}
 
 $sql = "SELECT id, name, location FROM futsal_info";
 $result = mysqli_query($con, $sql);
@@ -13,7 +21,12 @@ $result = mysqli_query($con, $sql);
                 <h2>Futsals</h2>
             </div>
             <div class="user--info">
-                <img src="/image/om2.jpg" alt="">
+            <?php if (isset($row['profile']) && !empty($row['profile'])) { ?>
+                <img src="../User/uploads/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-picture">
+            <?php } else { ?>
+                <img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture">
+            <?php }
+        ?>
             </div>
         </div>
         <div class="tabular-wrapper">
@@ -24,13 +37,13 @@ $result = mysqli_query($con, $sql);
                             <th>S.N</th>
                             <th>Futsal Name</th>
                             <th>Location</th>
-                            <th>Action</th>
+                            <th>Update</th>
+                            <th>Edit</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                     if (mysqli_num_rows($result) > 0) {
-                        // Loop through each row of data
                         $sn = 1;
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
@@ -38,8 +51,11 @@ $result = mysqli_query($con, $sql);
                                 <td><?php echo $sn; ?></td>
                                 <td><?php echo $row['name']; ?></td>
                                 <td><?php echo $row['location']; ?></td>
-                                <td><a href="UpdateFutsal.php?id=<?php echo $row['id']; ?>">Edit</a></td>
-                                <td><a href="delete.php?id=<?php echo $row['id']; ?>">Delete</a></td>
+                                <td><a class="btn-edit" href="UpdateFutsal.php?id=<?php echo $row['id']; ?> ">Edit</a></td>
+                                <form action="delete.php" method="POST">
+                                    <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
+                                    <td><input type="submit" name="delete" class="btn-delete" value="Delete"></td>
+                                </form>
                             </tr>
                             <?php
                             $sn++;
@@ -52,7 +68,7 @@ $result = mysqli_query($con, $sql);
                     </tbody>
                     <tfoot>
                         <tr>
-                        <td colspan="4">Total: <?php echo mysqli_num_rows($result); ?></td>
+                        <td colspan="5">Total: <?php echo mysqli_num_rows($result); ?></td>
                         </tr>
                     </tfoot>
                 </table>

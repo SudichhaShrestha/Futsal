@@ -47,7 +47,7 @@ if (isset($_GET['id'])) {
 
                     <div class="dcolumnf">
                         <div class="contentd">
-                            <p>Welcome to <?php echo $futsal_row['name']; ?> <br> <br> <?php echo $futsal_row['discription']; ?><br>
+                            <p>Welcome to <?php echo $futsal_row['name']; ?> <br> <br> <?php echo $futsal_row['description']; ?><br>
                                 <br> Location: <?php echo $futsal_row['location']; ?> <br>
                                 <?php echo $futsal_row['parking_available'] ? "<br>Parking: Available" : "<br>Parking: Not Available"; ?>
                                 <br>

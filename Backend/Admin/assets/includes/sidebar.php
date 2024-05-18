@@ -32,7 +32,7 @@ require_once './assets/includes/function.php';
             <li>
                 <a href="user.php">
                     <i class="fas fa-user"></i>
-                    <span>user</span>
+                    <span>User</span>
                 </a>
             </li>
             <li>

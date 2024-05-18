@@ -1,8 +1,29 @@
 <?php
 include("./assets/includes/sidebar.php");
 include './assets/includes/connect.php';
-$sql = "SELECT id, username, usertype FROM user";
-$result = mysqli_query($con, $sql);
+
+if (isset($_SESSION['user_id'])) {
+    $profileid = $_SESSION['user_id'];
+    $sql = "SELECT * FROM user WHERE id = $profileid";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+    }
+}
+
+
+if (isset($_POST['edit_user'])) {
+    $user_id = $_POST['user_id'];
+    $update_user = $_POST['update_user'];
+    $usertype = "UPDATE `user` SET `usertype` = '$update_user' WHERE `id` = '$user_id'";
+    $sql = mysqli_query($con, $usertype);
+
+    if ($sql) {
+        header("Location: user.php");
+    } else {
+        echo "<script>alert('Failed to update user type');</script>";
+    }
+}
 ?>
 
 
@@ -12,7 +33,12 @@ $result = mysqli_query($con, $sql);
             <h2>User</h2>
         </div>
         <div class="user--info">
-            <img src="./image/om2.jpg" alt="">
+            <?php if (isset($row['profile']) && !empty($row['profile'])) { ?>
+                <img src="../User/uploads/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-picture">
+            <?php } else { ?>
+                <img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture">
+            <?php }
+            ?>
         </div>
     </div>
 
@@ -28,17 +54,31 @@ $result = mysqli_query($con, $sql);
                         <th>Action</th>
                 <tbody>
                     <?php
-                    if (mysqli_num_rows($result) > 0) {
+                    $sql_users = "SELECT * FROM user";
+                    $result_users = mysqli_query($con, $sql_users);
+                    if (mysqli_num_rows($result_users) > 0) {
                         $sn = 1;
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            ?>
+                        while ($rows = mysqli_fetch_assoc($result_users)) {
+                    ?>
                             <tr>
                                 <td><?php echo $sn; ?></td>
-                                <td><?php echo $row['username']; ?></td>
-                                <td><?php echo $row['usertype']; ?></td>
-                                <td><button>Edit</button></td>
+                                <td><?php echo $rows['username']; ?></td>
+                                <form action="#" method="post">
+                                    <td>
+                                        <input type="hidden" name="user_id" value="<?php echo $rows['id']; ?>">
+                                        <select name="update_user">
+                                            <option disabled selected><?php echo $rows['usertype']; ?></option>
+                                            <option value="admin">admin</option>
+                                            <option value="user">user</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <input type="submit" name="edit_user" class="btn-edit" value="Save Change">
+                                    </td>
+                                </form>
+
                             </tr>
-                            <?php
+                    <?php
                             $sn++;
                         }
                     } else {
@@ -48,7 +88,7 @@ $result = mysqli_query($con, $sql);
                 </tbody>
                 <tfoot>
                     <tr>
-                    <td colspan="4">Total: <?php echo mysqli_num_rows($result); ?></td>
+                        <td colspan="4">Total: <?php echo mysqli_num_rows($result); ?></td>
                     </tr>
                 </tfoot>
                 </thead>

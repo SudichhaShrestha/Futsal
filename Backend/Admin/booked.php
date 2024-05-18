@@ -1,18 +1,34 @@
 <?php
 include './assets/includes/connect.php';
 include("./assets/includes/sidebar.php");
+if (isset ($_SESSION['user_id'])){
+    $profileid = $_SESSION['user_id'];
+    $sql = "SELECT * FROM user WHERE id = $profileid";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+    }
+}
+
 $sql = "SELECT bookings.id, bookings.person_name, futsal_info.name AS futsal_name, bookings.booking_datetime, futsal_info.price_per_hour
         FROM bookings
         INNER JOIN futsal_info ON bookings.futsal_id = futsal_info.id";
 $result = mysqli_query($con, $sql);
 ?>
+
+
     <div class="main--content">
         <div class="header--wrapper">
             <div class="header--title">
                 <h2>Booked</h2>
             </div>
             <div class="user--info">
-                <img src="/image/om2.jpg" alt="">
+            <?php if (isset($row['profile']) && !empty($row['profile'])) { ?>
+                <img src="../User/uploads/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-picture">
+            <?php } else { ?>
+                <img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture">
+            <?php }
+        ?>
             </div>
         </div>
         <div class="tabular-wrapper">

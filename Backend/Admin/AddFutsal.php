@@ -26,9 +26,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (mysqli_query($con, $query)) {
-        echo "Futsal added successfully.";
+        echo "<script> alert ('Futsal added successfully.');</script>";
     } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($con);
+        echo "<script> alert ('Failed to add Futsal.');</script>";
     }
 }
 ?>
