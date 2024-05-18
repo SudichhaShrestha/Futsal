@@ -49,23 +49,23 @@ if (isset($_SESSION['user_id'])) {
 <div class="page">
     <div class="container">
         <form action="#" method="post">
-            <div class="grid-container">
-                <div class="column">
-                    <h1><?php echo isset($row['name']) ? $row['name'] : ''; ?></h1>
-                    <img src="<?php echo isset($row['img_path']) ? $row['img_path'] : ''; ?>" width="300px" class="mainimg">
+            <div class="layout-grid">
+                <div class="main-column">
+                    <h1><?php echo !empty($row['name']) ? htmlspecialchars($row['name']) : ''; ?></h1>
+                    <img src="<?php echo !empty($row['img_path']) ? htmlspecialchars($row['img_path']) : ''; ?>" width="300px" class="mainimg" alt="Main Image">
                 </div>
-                <div class="dcolumn">
+                <div class="details-column">
                     <div class="form">
-                        <div class="person">
+                        <div class="form-group">
                             <input type="text" id="text" name="text" placeholder="Person Name" required />
                         </div>
-                        <div class="person">
-                            <input type="number" id="number" name="number" placeholder="Contact-number" required  min="0"/>
+                        <div class="form-group">
+                            <input type="number" id="number" name="number" placeholder="Contact Number" required min="0"/>
                         </div>
-                        <div class="person">
+                        <div class="form-group">
                             <input type="email" id="email" name="email" placeholder="Email" required />
                         </div>
-                        <div class="person">
+                        <div class="form-group">
                             <input type="datetime-local" id="dateandtime" name="dateandtime" required />
                         </div>
                     </div><br><br>
@@ -73,7 +73,7 @@ if (isset($_SESSION['user_id'])) {
                         <button type="submit" class="btns" name="booking">Book Now</button>
                     </div>
                     <div class="popup" id="popupContent">
-                        <img src="./assets/images/correct.jpg">
+                        <img src="./assets/images/correct.jpg" alt="Success">
                         <h2>Thank You!</h2>
                         <p>Your futsal has been booked. Thanks!</p>
                         <button type="button" onclick="closePopup()">OK</button>
@@ -83,6 +83,7 @@ if (isset($_SESSION['user_id'])) {
         </form>
     </div>
 </div>
+
 
 <?php
 include_once './assets/includes/footer.php';

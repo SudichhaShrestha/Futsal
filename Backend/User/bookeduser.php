@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
 
 <body>
     <section class="home">
-        <h1>Your Bookings</h1>
+        <h1 class="userhead">Your Bookings</h1>
         <div class="table-container">
             <table class="order-table">
                 <thead>
