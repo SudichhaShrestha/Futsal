@@ -1,8 +1,6 @@
 <?php
 include_once './assets/includes/header.php';
 include './assets/includes/connect.php';
-//esewa Payment integeration
-$url = '"https://uat.esewa.com.np/epay/main';
 
 // Check if user is logged in
 if (isset($_SESSION['user_id'])) {
@@ -16,20 +14,25 @@ if (isset($_SESSION['user_id'])) {
         // Retrieve user_id from session
         $user_id = $_SESSION['user_id'];
 
-        $check_futsal_query = "SELECT * FROM futsal_info WHERE id = $futsal_id";
-        $check_futsal_result = mysqli_query($con, $check_futsal_query);
-        if (mysqli_num_rows($check_futsal_result) > 0) {
-            // Insert booking details along with user_id
-            $insertquery = "INSERT INTO bookings (person_name, contact_number, email, booking_datetime, futsal_id, user_id) VALUES ('$person_name', '$contact_number', '$email', '$booking_datetime', $futsal_id, $user_id)";
-            $result = mysqli_query($con, $insertquery);
-
-            if ($result) {
-                echo "<script>alert('Booked Successfully');</script>";
-            } else {
-                die("Error: " . mysqli_error($con));
-            }
+        // Check if the booking time is in the past
+        if (new DateTime($booking_datetime) < new DateTime()) {
+            echo "<script>alert('Booking time cannot be in the past.');</script>";
         } else {
-            echo "Error: Futsal not found.";
+            $check_futsal_query = "SELECT * FROM futsal_info WHERE id = $futsal_id";
+            $check_futsal_result = mysqli_query($con, $check_futsal_query);
+            if (mysqli_num_rows($check_futsal_result) > 0) {
+                // Insert booking details along with user_id
+                $insertquery = "INSERT INTO bookings (person_name, contact_number, email, booking_datetime, futsal_id, user_id) VALUES ('$person_name', '$contact_number', '$email', '$booking_datetime', $futsal_id, $user_id)";
+                $result = mysqli_query($con, $insertquery);
+
+                if ($result) {
+                    echo "<script>alert('Booked Successfully');</script>";
+                } else {
+                    die("Error: " . mysqli_error($con));
+                }
+            } else {
+                echo "Error: Futsal not found.";
+            }
         }
     }
 
@@ -50,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
 
 <div class="page">
     <div class="container">
-        <form action="#" method="post">
+        <form action="#" method="post" onsubmit="return validateBookingTime()">
             <div class="layout-grid">
                 <div class="main-column">
                     <h1><?php echo !empty($row['name']) ? htmlspecialchars($row['name']) : ''; ?></h1>
@@ -83,10 +86,8 @@ if (isset($_SESSION['user_id'])) {
                 </div>
             </div>
         </form>
-
     </div>
 </div>
-
 
 <?php
 include_once './assets/includes/footer.php';

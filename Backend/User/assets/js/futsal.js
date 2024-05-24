@@ -24,16 +24,32 @@ function openModal(imagePath) {
     });
 });
 
+//JavaScript validation to prevent booking in the past and validate phone number
+function validateBookingTime() {
+  const dateTimeInput = document.getElementById('dateandtime').value;
+  const selectedDateTime = new Date(dateTimeInput);
+  const now = new Date();
 
+  if (selectedDateTime < now) {
+      alert("Booking time cannot be in the past.");
+      return false;
+  }
 
+  const phoneNumberInput = document.getElementById('number').value;
+  const phoneNumberPattern = /^(98|97|96)\d{8}$/;
 
+  if (!phoneNumberPattern.test(phoneNumberInput)) {
+      alert("Please enter a valid phone number.");
+      return false;
+  }
 
-// let popupContent = document.getElementById("popupContent");
+  return true;
+}
 
-// function openPopup() {
-// popupContent.classList.add("open-popup");
-// }
-
-// function closePopup() {
-// popupContent.classList.remove("open-popup");
-// }
+// Set the minimum date and time to the current date and time
+window.onload = function() {
+  const dateTimeInput = document.getElementById('dateandtime');
+  const now = new Date();
+  const formattedDateTime = now.toISOString().slice(0, 16);
+  dateTimeInput.min = formattedDateTime;
+}

@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($updatequery->execute()) {
             echo "<script>alert('Update Successfully');</script>";
+            header("Location:update.php");
         } else {
             echo "<script>alert('Update Failed');</script>";
         }

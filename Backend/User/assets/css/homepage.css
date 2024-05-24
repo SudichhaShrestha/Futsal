@@ -194,3 +194,15 @@ html{
 font-size: 50%;
 }
 }
+
+
+.nearby figure{ 
+  height: 230px;
+  width: 100%;
+}
+
+.nearby figure img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

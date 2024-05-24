@@ -31,17 +31,7 @@ if (isset($_GET['id'])) {
                             <span class="close" onclick="closeModal()">&times;</span>
                             <img class="modal-content" id="modal-image">
                         </div>
-                        <div class="booked">
-                            <select class="time">
-                                <option value="time_slot1">Unavailable Time</option>
-                                <?php
-                                // Display booking options
-                                while ($booking_row = mysqli_fetch_assoc($booking_result)) {
-                                    echo '<option value="' . $booking_row['booking_datetime'] . '">' . $booking_row['booking_datetime'] . '</option>';
-                                }
-                                ?>
-                            </select>
-                        </div>
+                        
                         <div class="btn"><a href="booking.php?id=<?php echo $futsal_row['id']; ?>">Book Now</a></div>
                     </div>
 
@@ -54,6 +44,17 @@ if (isset($_GET['id'])) {
                                 <br>Price: <?php echo $futsal_row['price_per_hour']; ?><br>
                                 <br>Time: <?php echo $futsal_row['opening_time'] ?> to <?php echo $futsal_row['closing_time']; ?>
                             </p>
+                            <div class="booked">
+                            <select class="time">
+                                <option value="time_slot1">Unavailable Time</option>
+                                <?php
+                                // Display booking options
+                                while ($booking_row = mysqli_fetch_assoc($booking_result)) {
+                                    echo '<option value="' . $booking_row['booking_datetime'] . '">' . $booking_row['booking_datetime'] . '</option>';
+                                }
+                                ?>
+                            </select>
+                        </div>
                         </div>
                     </div>
                 </div>

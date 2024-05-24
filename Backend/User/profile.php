@@ -18,8 +18,8 @@
     <div class="containerp">
         <form action="#">
             <div class="Profile_info">
-                <h2>Profile Page</h2>
                 <div class="form-container">
+                    <h2>Profile Page</h2>
                     <img src="./uploads/<?php echo $row ['profile'];?>" alt="Profile Picture" class="profile-picture">
                     <div class="personal_info">
                         <label for="first-name"><?php echo $row ['firstname'];?></label>

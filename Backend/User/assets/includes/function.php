@@ -32,9 +32,9 @@ function registerlogin($username, $email, $password)
 
 
 function is_login(){
-  if (isset($_SESSION['user_id'])) :
+    if (isset($_SESSION['user_id'])) :
     return true;
-else :
-    return false;
-endif;
+    else :
+        return false;
+    endif;
 }

@@ -7,7 +7,7 @@
         <a href=""><i class="fa fa-twitter-square"></i></a>
       </div>
 
-      <div class="footernav">
+      <div class="footernav"  id="footer-widget">
         <ul>
           <li><a href="">Home</a></li>
           <li><a href="">About Us</a></li>

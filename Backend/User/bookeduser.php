@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
 
 <body>
     <section class="home">
-        <h1 class="userhead">Your Bookings</h1>
+        <h5 class="userhead">Your Bookings</h5>
         <div class="table-container">
             <table class="order-table">
                 <thead>
@@ -53,6 +53,12 @@ if (isset($_SESSION['user_id'])) {
             </table>
         </div>
     </section>
+
+
+
+    <?php
+include_once './assets/includes/footer.php';
+?>
 </body>
 
 </html>

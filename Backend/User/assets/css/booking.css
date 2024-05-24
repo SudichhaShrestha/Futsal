@@ -1,3 +1,14 @@
+
+.user_info {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+  }
+  .user_infos{
+    padding-left: 5px;
+  }
+  
 .page {
     padding: 50px 150px;
 }

@@ -9,7 +9,7 @@
 
 .Profile_info h2{
   font-size: 5em;
-  padding-left: 300px;
+  padding-bottom: 15px;
 } 
 
 .profile-picture {
@@ -63,7 +63,7 @@
   font-size: 2em;
 }
 .form-container{
-  background-color: rgba(0, 255, 255, 0.156);
+  background-color: #b3cf9982;
   padding-left: 200px;
 }
 
