@@ -12,6 +12,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 
+
 if (isset($_POST['edit_user'])) {
     $user_id = $_POST['user_id'];
     $update_user = $_POST['update_user'];
@@ -24,6 +25,20 @@ if (isset($_POST['edit_user'])) {
         echo "<script>alert('Failed to update user type');</script>";
     }
 }
+
+
+//delete user
+if (isset($_POST['delete_user'])) {
+    $id = $_POST['id'];
+    $sql = "DELETE FROM user WHERE id = '$id'";
+    $query = mysqli_query($con, $sql);
+    if ($query) {
+        echo "<script> alert('Data Deleted'); </script>";
+        header("location:user.php");
+    } else {
+        echo "<script> alert('Failed To Delete Data'); </script>";
+    }
+}
 ?>
 
 
@@ -33,12 +48,7 @@ if (isset($_POST['edit_user'])) {
             <h2>User</h2>
         </div>
         <div class="user--info">
-            <?php if (isset($row['profile']) && !empty($row['profile'])) { ?>
-                <a href="../User/profile.php"><img src="../User/uploads/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-picture"></a>
-                
-            <?php } else { ?>
-                <a href="../User/profile.php"><img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture"></a>
-            <?php } ?>
+        <img src="<?php echo '../User/assets/images' . $row['profile']; ?>"  alt="Profile Picture" class="profile-picture">
         </div>
     </div>
 
@@ -52,11 +62,12 @@ if (isset($_POST['edit_user'])) {
                         <th>User Name</th>
                         <th>Role</th>
                         <th>Action</th>
+                        <th>Edit</th>
                 <tbody>
                     <?php
                     $sql_users = "SELECT * FROM user";
                     $result_users = mysqli_query($con, $sql_users);
-                    if (mysqli_num_rows($result_users) > 0) {
+                    if ( mysqli_num_rows($result_users) > 0) {
                         $sn = 1;
                         while ($rows = mysqli_fetch_assoc($result_users)) {
                     ?>
@@ -75,6 +86,11 @@ if (isset($_POST['edit_user'])) {
                                     <td>
                                         <input type="submit" name="edit_user" class="btn-edit" value="Save Change">
                                     </td>
+                                    <td>
+                                      <input type="hidden" name="id" value="<?php echo $rows['id'] ?>">
+
+                                        <input type="submit" name="delete_user" style="background-color: red;" class="btn-edit" value="Delete">
+                                    </td>
                                 </form>
 
                             </tr>
@@ -88,7 +104,7 @@ if (isset($_POST['edit_user'])) {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="4">Total: <?php echo mysqli_num_rows($result); ?></td>
+                        <td colspan="5">Total: <?php echo mysqli_num_rows($result_users); ?></td>
                     </tr>
                 </tfoot>
                 </thead>

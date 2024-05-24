@@ -18,7 +18,7 @@ body {
 }
 
 :root {
-    --orange: #ffa500;
+    --green: #21b913;
 }
 
 * {
@@ -30,7 +30,7 @@ body {
 }
 
 *::selection {
-    background: var(--orange);
+    background: var(--green);
     color: #fff;
 }
 
@@ -49,7 +49,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    background: #333;
+    background:#b3cf99;
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -73,12 +73,12 @@ header {
 header .logo {
     font-size: 2.5rem;
     font-weight: bolder;
-    color: #f73838;
+    color: #5dda2b;
     text-transform: uppercase;
 }
 
 header .logo span {
-    color: var(--orange);
+    color: #4fa82d;
 }
 
 header .navbar a {
@@ -88,7 +88,7 @@ header .navbar a {
 }
 
 header .navbar a:hover {
-    color: var(--orange);
+    color: var(--green);
 }
 
 .btnLogin-popup {
@@ -161,7 +161,7 @@ header .search-bar-container label:hover {
 
 .userhead{
     margin: 20px 0;
-    color: #333;
+    color: #19a949;
     text-align: center;
 }
 

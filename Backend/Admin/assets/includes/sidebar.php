@@ -53,14 +53,14 @@ require_once './assets/includes/function.php';
                     <span>Booked Futsal</span>
                 </a>
             </li>
-            <li>
+            <!-- <li>
                 <a href="UpdateFutsal.php">
                     <i class="fas fa-pen-to-square"></i>
                     <span>Update Futsal</span>
                 </a>
-            </li>
+            </li> -->
             <li>
-                <a href="#">
+                <a href="setting.php">
                     <i class="fas fa-cog"></i>
                     <span>Setting</span>
                 </a>

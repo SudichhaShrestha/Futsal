@@ -16,7 +16,7 @@ body {
   z-index: 0;
 }
 :root {
-  --orange: #ffa500;
+  --orange: #04ff00;
 }
 
 * {
@@ -47,7 +47,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  background: #333;
+  background: #e20101;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -70,7 +70,7 @@ header {
 header .logo{
   font-size: 2.5rem;
   font-weight: bolder;
-  color: #f73838;
+  color: #3bf738;
   text-transform: uppercase;
 }
 
@@ -102,7 +102,7 @@ header .navbar a:hover{
 }
 .btnLogin-popup:hover {
   background: #000;
-  color: orange;
+  color: rgb(31, 117, 255);
 }
 
 header .icons i{

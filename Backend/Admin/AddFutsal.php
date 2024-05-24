@@ -5,6 +5,15 @@ include './assets/includes/connect.php';
 ?>
 <?php
 
+if (isset($_SESSION['user_id'])) {
+    $profileid = $_SESSION['user_id'];
+    $sql = "SELECT * FROM user WHERE id = $profileid";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $futsal_name = $_POST['futsal_name'];
     $description = $_POST['description'];
@@ -18,12 +27,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $profile = $_FILES['picprofile'];
     $picname = rand(1000, 10000) . '-' . $profile['name'];
     $tname = $profile['tmp_name'];
-    $upload_dir = './uploads/';
+    $upload_dir = './Admin/uploads';
     move_uploaded_file($tname, $upload_dir . $picname);
 
 
     $query = "INSERT INTO futsal_info (name, description, location, price_per_hour, opening_time, closing_time, parking_available, img_path) 
-    VALUES ('$futsal_name', '$description', '$location', $price_per_hour, '$opening_time', '$closing_time', $parking_available, '$picname', ')";
+    VALUES ('$futsal_name', '$description', '$location', $price_per_hour, '$opening_time', '$closing_time', $parking_available, '$picname')";
 
 
     if (mysqli_query($con, $query)) {
@@ -39,6 +48,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="header--title">
             <span>ADD</span>
             <h2>Futsal</h2>
+        </div>
+        
+        <div class="user--info">
+        <!-- <img src="<?php echo '../User/assets/images' . $row['profile']; ?>"  alt="Profile Picture" class="profile-picture"> -->
+        <img src="<?php echo '../User/assets/images' . $row['profile']; ?>" alt="Profile Picture" class="profile-picture">
+
         </div>
     </div>
 

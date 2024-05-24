@@ -43,12 +43,7 @@ if (isset($_GET['id'])) {
             <h2>Futsal</h2>
         </div>
         <div class="user--info">
-            <?php if (isset($row['profile']) && !empty($row['profile'])) { ?>
-                <a href="../User/profile.php"><img src="../User/uploads/<?php echo $row['profile']; ?>" alt="Profile Picture" class="profile-picture"></a>
-
-            <?php } else { ?>
-                <a href="../User/profile.php"><img src="../User/uploads/default.png" alt="Profile Picture" class="profile-picture"></a>
-            <?php } ?>
+        <img src="<?php echo '../User/assets/images' . $row['profile']; ?>"  alt="Profile Picture" class="profile-picture">
         </div>
     </div>
     <div class="container">

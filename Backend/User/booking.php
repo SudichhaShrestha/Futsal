@@ -1,6 +1,8 @@
 <?php
 include_once './assets/includes/header.php';
 include './assets/includes/connect.php';
+//esewa Payment integeration
+$url = '"https://uat.esewa.com.np/epay/main';
 
 // Check if user is logged in
 if (isset($_SESSION['user_id'])) {
@@ -81,6 +83,7 @@ if (isset($_SESSION['user_id'])) {
                 </div>
             </div>
         </form>
+
     </div>
 </div>
 

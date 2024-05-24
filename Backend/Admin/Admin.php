@@ -22,6 +22,9 @@ if (mysqli_num_rows($resultuser) > 0) {
             <span>Primary</span>
             <h2>Dashboard</h2>
         </div>
+        <div class="user--info">
+        <img src="<?php echo '../User/assets/images' . $row['profile']; ?>"  alt="Profile Picture" class="profile-picture">
+        </div>
     </div>
 
     <div class="card-container">
@@ -36,7 +39,7 @@ if (mysqli_num_rows($resultuser) > 0) {
                     </div>
                     <i class="fas fa-dollar-sign icon"></i>
                 </div>
-                <span class="card-detail">**** ****** ****06</span>
+                
             </div>
 
             <div class="booking-card light-purple">
@@ -60,13 +63,15 @@ if (mysqli_num_rows($resultuser) > 0) {
             </div>
 
             <div class="booking-card light-blue">
-                <div class="amount">
-                    <span>Payment Proceed</span>
-                    <span class="amount-value">$500.00</span>
+                <div class="card--header">
+                    <div class="amount">
+                        <span>Payment Proceed</span>
+                        <span class="amount-value">$500.00</span>
+
                 </div>
                 <i class="fas fa-check icon dark-blue"></i>
             </div>
-            <span class="card-detail">**** ***** *****06</span>
+            </div>
         </div>
     </div>
 

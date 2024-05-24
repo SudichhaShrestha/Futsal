@@ -10,6 +10,9 @@ function registerlogin($username, $email, $password)
     $db_pass = $user_data['password'];
     if ($db_pass == $password) {
         $_SESSION['user_id'] = $user_data["id"];
+        $_SESSION['user_name'] = $user_data["firstname"];
+        $_SESSION['user_email'] = $user_data["email"];
+        $_SESSION['user_number'] = $user_data["number"];
         echo '<script>alert("Login Successfully")</script>';
         if ($user_data['usertype'] == "admin") {
             header("Location: ../Admin/Admin.php");
