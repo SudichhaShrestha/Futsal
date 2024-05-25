@@ -30,6 +30,7 @@ if (isset($_POST['register'])) {
       $result = mysqli_query($con, $insertquery);
       if ($result) {
         echo "<script>alert('Account Created Successfully');</script>";
+        header('location:login.php');
       } else {
         die(mysqli_error($con));
       }
