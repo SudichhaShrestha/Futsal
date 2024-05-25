@@ -6,7 +6,7 @@ require_once './assets/includes/function.php';
 
 <?php
 
-if (isset($_POST['test'])) {
+if (isset($_POST['login'])) {
   $username = $_POST['username'];
   $email = $_POST['username'];
   $password = $_POST['password'];
@@ -42,7 +42,7 @@ if (isset($_POST['test'])) {
             <label><input type="checkbox" />Remember me</label>
             <a href="#">Forgot Password?</a>
           </div>
-          <button type="submit" class="btn02" name="test">
+          <button type="submit" class="btn02" name="login">
             Login
           </button>
           <div class="login-register">

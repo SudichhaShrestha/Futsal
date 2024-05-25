@@ -2,7 +2,7 @@
     include_once './assets/includes/header.php';
     include './assets/includes/connect.php';
 ?>
-  
+  <!-- img slider -->
 <div class="container12">
     <div class="slider-container1">
         <div class="slider">

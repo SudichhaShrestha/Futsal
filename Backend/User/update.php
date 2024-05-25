@@ -46,35 +46,35 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!-- Start of body -->
 <div class="containerp">
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form id="updateForm" action="#" method="post" enctype="multipart/form-data">
         <div class="Profile_info">
             <h2>Update Page</h2>
             <div class="form-container">
                 <label for="profile-picture" class="edit-profile-picture">
                     <div class="image-container">
-                    <img src="<?php echo './uploads/' . $row['profile']; ?>" alt="Profile Picture" class="profile-picture">
+                        <img src="<?php echo './uploads/' . $row['profile']; ?>" alt="Profile Picture" class="profile-picture">
                         <span class="edit-button">Edit</span>
                     </div>
                     <input type="file" id="profile-picture" name="profile_image" class="file-input">
                 </label>
                 <div class="personal_info">
-                    <input type="text" id="first-name" name="first-name" value="<?php echo $row['firstname'] ? $row['firstname']:"" ?> ">
+                    <input type="text" id="first-name" name="first-name" value="<?php echo $row['firstname'] ? $row['firstname'] : "" ?> ">
                     <label for="first-name">First Name</label>
                 </div><br>
                 <div class="personal_info">
-                    <input type="text" id="last-name" name="last-name" value="<?php echo $row['lastname'] ? $row['lastname']:"" ?>">
+                    <input type="text" id="last-name" name="last-name" value="<?php echo $row['lastname'] ? $row['lastname'] : "" ?>">
                     <label for="last-name">Last Name </label>
                 </div><br>
                 <div class="personal_info">
-                    <input type="text" id="username" name="username" value="<?php echo $row['username'] ? $row['username']:"" ?>">
+                    <input type="text" id="username" name="username" value="<?php echo $row['username'] ? $row['username'] : "" ?>">
                     <label for="username">Username</label>
                 </div><br>
                 <div class="personal_info">
-                    <input type="number" id="number" name="number" value="<?php echo $row['phone'] ? $row['phone']:"" ?>">
+                    <input type="number" id="number" name="number" value="<?php echo $row['phone'] ? $row['phone'] : "" ?>">
                     <label for="number">Phone</label>
                 </div><br>
                 <div class="personal_info">
-                    <input type="email" id="email" name="email" value="<?php echo $row['email'] ? $row['email']:"" ?>">
+                    <input type="email" id="email" name="email" value="<?php echo $row['email'] ? $row['email'] : "" ?>">
                     <label for="email">Email </label>
                 </div><br>
                 <button type="submit" class="link-edit" name="savechange">Save Changes</button>
@@ -86,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 include_once './assets/includes/footer.php';
 ?>
 <script src="/assets/js/homepage.js"></script>
+<script src="./assets/js/number.js"></script>
 </body>
 
 </html>

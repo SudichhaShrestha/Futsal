@@ -51,7 +51,7 @@ if (isset($_POST['register'])) {
           <ion-icon name="close-outline"></ion-icon>
         </span>
         <h2>Registration</h2>
-        <form method="post" autocomplete="off" enctype="multipart/form-data">
+        <form method="post" id="updateForm" autocomplete="off" enctype="multipart/form-data">
           <div class="usernames">
             <div class="input-box">
               <span class="icon">
@@ -79,8 +79,9 @@ if (isset($_POST['register'])) {
             <span class="icon">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </span>
-            <input type="number" name="phone" required />
-            <label>Phone Number</label>
+
+            <input type="number" id="number" name="phone" required />
+            <label for="number">Phone Number</label>
           </div>
           <div class="input-box">
             <span class="icon">
@@ -108,7 +109,7 @@ if (isset($_POST['register'])) {
             <input type="file" name="picprofile" id="picprofile" />
           </div>
           <div class="remember-forgot">
-            <label><input type="checkbox" /> I agree to the terms & condition</label>
+            <label><input type="checkbox" required/> I agree to the terms & condition</label>
           </div>
           <button type="submit" class="btn02" name="register">Register</button>
           <div class="login-register">
@@ -125,5 +126,10 @@ if (isset($_POST['register'])) {
 <?php
 include_once './assets/includes/footer.php';
 ?>
+
+<script src="./assets/js/number.js"></script>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
